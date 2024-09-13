@@ -9,3 +9,4 @@
   > tốc độ đặt trước
 * > Tuy nhiên chưa tùy biến được 'tốc độ đặt'
   > chưa điều khiển chính xác tốc độ với PID (cần thử code PID khác) https://www.youtube.com/watch?v=HRaZLCBFVDE&ab_channel=CurioRes
+  > [!NOTE] CODE Ở THƯ MỤC 'TEST_DK_VAN_TOC_PID_2BANH_DUNG_KEY02'

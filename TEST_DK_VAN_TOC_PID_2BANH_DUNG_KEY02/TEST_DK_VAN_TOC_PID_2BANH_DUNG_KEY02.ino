@@ -9,7 +9,7 @@
 #define dir1 6            // chân direction 1
 #define dir2 7            // chân direction 2
 
-// KHAI BÁO ĐỘNG CƠ 2
+// KHAI BAO ĐONG CO 2
 #define in3 19
 #define in4 17
 #define enB 18
@@ -29,7 +29,7 @@ double E20, E21, E22;
 double alpha2, beta2, gamma2, Kp2, Ki2, Kd2;
 double Output2, LastOutput2;
 
-// KHAI BÁO BIẾN TT ĐIỀU KHIỂN HƯỚNG TIẾN-LÙI-TRÁI-PHẢI == 8-2-4-6
+// KHAI BAO BIEN DIEU KHIEN HUONG TIEN-LUI-TRAI-PHAI == 8-2-4-6
 int tt_banh = 0;
 int tt_banh2 = 0;
 
@@ -71,25 +71,25 @@ void loop()
   int i;
   for (i=0; i<10; i++)
     delay(1);
-  // IN RA MÀN HÌNH GIÁ TRỊ TỐC ĐỘ CỦA 2 ĐỘNG CƠ
+  // IN RA MAN HINH GIA TRI TOC DO CUA 2 DONG CO
   Serial.print("tocdo:  ");
   Serial.print(tocdo);
   Serial.print("   tocdo2:  ");
   Serial.println(tocdo2);
-  /////////////////////////////////////PHẦN XỬ LÝ ĐỌC TÍN HIỆU ĐIỀU KHIỂN TỪ MONITOR
+  /////////////////////////////////////PHAN XU LY DOC TIN HIEU DIEU KHIEN TU MONITOR
   int* const ptr_tt_banh = &tt_banh;
   int* const ptr_tt_banh2 = &tt_banh2;
   if (Serial.available() > 0) {
-    // Đọc giá trị từ bàn phím dưới dạng chuỗi DẠNG "4 4", "2 2"
+    // DOC TU BAN PHIM GIA TRI CHUOI "4 4", "2 2"
     String input = Serial.readStringUntil('\n');  // Đọc chuỗi đến khi gặp ký tự xuống dòng
 
-    // Tách chuỗi thành 2 phần dựa trên dấu cách (space)
-    int index = input.indexOf(' ');  // Tìm vị trí của dấu cách
-    String tocdodat_str = input.substring(0, index);  // Lấy chuỗi trước dấu cách
-    String tocdodat2_str = input.substring(index + 1);  // Lấy chuỗi sau dấu cách
+    // Tach chuoi thanh 2 phan cach nhau boi dau (space)
+    int index = input.indexOf(' ');  // Tim vi tri cua dau cach
+    String tocdodat_str = input.substring(0, index);  // Lay chuoi truoc dau cach
+    String tocdodat2_str = input.substring(index + 1);  // Lay chuoi sau dau cach
 
-    // Chuyển chuỗi thành số nguyên VÀ gán giá trị vào con trỏ hằng
-    // ==> thay đổi giá trị vị trí con trỏ trỏ đến 
+    // Chuyen chuoi thanh so nguyen va gan gia tri cho con tro hang
+    // ==> thay doi gia tri vi tri con tro tro den
     *ptr_tt_banh = tocdodat_str.toInt();
     *ptr_tt_banh2 = tocdodat2_str.toInt();
   }

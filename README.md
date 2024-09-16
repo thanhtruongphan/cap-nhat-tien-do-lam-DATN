@@ -14,6 +14,8 @@
 
 
 ## **'16/09/24  '**
+
+* phân loại 1 số H-bridge thông dụng https://www.youtube.com/watch?v=ygrsIqWOh3Y&t=2876s&ab_channel=DroneBotWorkshop
 * khắc phục được lỗi nhiễu PID (vì cấp nguồn có áp thấp ko đủ ổn định encoder dẫn đến nhiễu, thay 3,3V bằng 5V là được)
 * áp dụng nội dung trong video sau, mọi thứ ổn định như trong video https://www.youtube.com/watch?v=HRaZLCBFVDE&ab_channel=CurioRes
 > 'LƯU Ý: ' '''Baud rate''' trong giao tiếp Serial arduino nên chọn phù hợp,

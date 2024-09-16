@@ -53,3 +53,9 @@ Baud rate thấp: Phù hợp khi bạn cần truyền dữ liệu ít và cần 
 
 Baud rate cao: Thích hợp khi cần truyền dữ liệu nhanh với khối lượng lớn hoặc khi cần truyền các dữ liệu thời gian thực như video hoặc tín hiệu cảm biến tốc độ cao.
 
+### Tune PID
+**Kp = 3.2**
+>>>>>>>>>>>> ![image](https://github.com/user-attachments/assets/fe205b84-03ce-4681-8c66-8600bbe9a6f9)
+
+**Kp = 3.2, Ki = 1**
+**Kp = 3.2, Ki = 1**

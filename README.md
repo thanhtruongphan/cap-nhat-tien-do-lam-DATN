@@ -73,3 +73,7 @@ Baud rate cao: Thích hợp khi cần truyền dữ liệu nhanh với khối l�
 ![image](https://github.com/user-attachments/assets/eff01b99-e9f8-4d10-bfac-b43c68a09d39)
 
 > [!NOTE] CODE Ở THƯ MỤC "PID_servo_control_with_fillter_2BANH_02"
+
+* Đã điều khiển được trên Raspberry qua giao thức 'serial'
+![image](https://github.com/user-attachments/assets/cee8b13c-feeb-4c14-9280-4156b09a6531)
+

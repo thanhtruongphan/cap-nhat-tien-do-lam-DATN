@@ -58,4 +58,7 @@ Baud rate cao: Thích hợp khi cần truyền dữ liệu nhanh với khối l�
 >>>>>>>>>>>> ![image](https://github.com/user-attachments/assets/fe205b84-03ce-4681-8c66-8600bbe9a6f9)
 
 **Kp = 3.2, Ki = 1**
-**Kp = 3.2, Ki = 1**
+**Kp = 1.5, Ki = 1.6**
+>>>>>>>>>>>> ![image](https://github.com/user-attachments/assets/c8300054-6f7e-4816-951e-e38ec695e1d4)
+
+

@@ -64,6 +64,8 @@ Baud rate cao: Thích hợp khi cần truyền dữ liệu nhanh với khối l�
 >>>>>>>>>>>> ![image](https://github.com/user-attachments/assets/c8300054-6f7e-4816-951e-e38ec695e1d4)
 
 **Kp = 0.5, Ki = 0.95, code tính PID phương pháp 2 link YT: https://www.youtube.com/watch?v=HRaZLCBFVDE&ab_channel=CurioRes**
+> đường màu vàng đáp ứng số 1, màu đen là đáp ứng số 2
+> 
 ![image](https://github.com/user-attachments/assets/7e08b4fa-4a26-419d-8bc5-5b7ba0ed78d8)
 
 ![image](https://github.com/user-attachments/assets/9111e4db-88c8-4edc-948e-d7b837e46ab6)

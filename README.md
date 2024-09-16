@@ -72,4 +72,4 @@ Baud rate cao: Thích hợp khi cần truyền dữ liệu nhanh với khối l�
 
 ![image](https://github.com/user-attachments/assets/eff01b99-e9f8-4d10-bfac-b43c68a09d39)
 
-
+> [!NOTE] CODE Ở THƯ MỤC "PID_servo_control_with_fillter_2BANH_02"

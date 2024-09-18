@@ -201,24 +201,24 @@ Quản lý các tín hiệu từ encoder để điều chỉnh tốc độ và v
 * For your university graduation project involving an Autonomous Mobile Robot (AMR), the best version of ROS depends on a few factors like hardware compatibility, desired features, and ease of use. However, here are some guidelines to help you choose the right version:
 
 **1. ROS 1 (Noetic):**
-'Pros:'
+'''**Pros:**'''
   * The Noetic version is the last long-term support (LTS) release of ROS 1, supported until 2025.
   * It has a large number of packages, including libraries for navigation, SLAM, and sensor integration.
   * Noetic is designed for Ubuntu 20.04, which might be more stable for your project, especially if you have a Raspberry Pi 4 or similar hardware.
   * More documentation and community support are available, which can be helpful for troubleshooting.
-'Cons:'
+'''**Cons:**'''
   * ROS 1 has a single-threaded architecture and is not as scalable or modern as ROS 2.
 **2. ROS 2 (Humble or Foxy):**
-'Pros:'
+'''**Pros:**'''
   * ROS 2 is the future of the ROS ecosystem, offering better multi-threading, real-time support, and improved communication between nodes.
   * The Foxy version (LTS) and Humble are stable for long-term projects, with support until 2025 and beyond.
   * It has better support for advanced networking and safety-critical applications, which might be useful for an AMR project.
   * If you plan to work on collaborative robots (multi-robot systems) or use DDS (Data Distribution Service) for more robust communication, ROS 2 is highly recommended.
-'Cons:'
+'''**Cons:**'''
   * The ecosystem is still evolving, and not all ROS 1 packages have been ported to ROS 2.
   * Learning curve: Since ROS 2 has significant changes, you may need to spend extra time learning its new architecture.
 
-**'Recommendation:'**
+'''**Recommendation:**'''
 _For your AMR project:_
 
   * If you need stability and mature packages for SLAM, path planning, and sensor integration (like LIDAR or IMU), ROS 1 Noetic is a safe choice.

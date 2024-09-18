@@ -139,3 +139,28 @@ def a_star(start, goal, grid_map):
 *Tổng kết:
 Xử lý dữ liệu LIDAR để tạo bản đồ lưới là bước đầu tiên quan trọng.
 Sau đó, bạn có thể triển khai thuật toán A* để tìm đường tối ưu từ vị trí hiện tại của robot tới đích, trong khi tránh các chướng ngại vật từ dữ liệu LIDAR.
+
+### Dùng ROS hoặc không dùng ROS
+* Trong dự án phát triển AMR (Autonomous Mobile Robot), việc sử dụng hoặc không sử dụng ROS (Robot Operating System) phụ thuộc vào độ phức tạp của hệ thống và các chức năng bạn muốn triển khai. Dưới đây là phân tích các phần của hệ thống AMR mà bạn có thể tự làm mà không cần ROS và những phần cần ROS để dễ dàng hơn.
+
+#### Những phần bạn có thể tự làm mà không cần ROS:
+
+**1. Điều khiển cơ bản của robot (Kinematics và động cơ):**
+
+> Bạn có thể tự triển khai các thuật toán điều khiển động cơ, điều hướng và điều khiển tốc độ. Điều này bao gồm việc lập trình trực tiếp các tín hiệu điều khiển cho bánh xe (chẳng hạn qua Arduino hoặc Raspberry Pi).
+> Điều khiển kiểu differential drive (xe hai bánh) hoặc mecanum wheels có thể được thực hiện mà không cần ROS.
+Quản lý các tín hiệu từ encoder để điều chỉnh tốc độ và vị trí động cơ qua PID control là hoàn toàn có thể tự làm.
+**2. Thu thập và xử lý dữ liệu cảm biến:**
+
+    > Nếu chỉ sử dụng các cảm biến cơ bản như LIDAR, camera, hoặc cảm biến siêu âm, bạn có thể lập trình để thu thập dữ liệu từ chúng mà không cần ROS.
+    *Ví dụ: Kết nối và đọc dữ liệu từ RPLIDAR, MPU (Inertial Measurement Unit), hoặc camera qua thư viện giao tiếp tương ứng (như thư viện Python cho LIDAR).*
+
+    > Xử lý dữ liệu cảm biến (ví dụ: xây dựng bản đồ lưới từ LIDAR) có thể được thực hiện thủ công bằng cách viết mã xử lý dữ liệu riêng.
+**3. Thuật toán định vị và tìm đường:**
+
+    > Nếu bạn muốn tự triển khai các thuật toán định vị (localization) và tìm đường (path planning), như A* hoặc Dijkstra, bạn có thể tự viết các thuật toán này từ đầu.
+    > Các hệ thống định vị đơn giản, như sử dụng cảm biến quán tính và encoder, cũng có thể tự làm mà không cần ROS.
+**4. Giao tiếp điều khiển từ xa và giao diện người dùng:**
+
+    > Bạn có thể tự thiết kế các giao diện điều khiển (sử dụng Flask cho web interface hoặc giao tiếp qua MQTT) để điều khiển từ xa robot mà không cần ROS.
+    > Những tác vụ giao tiếp cơ bản giữa máy tính chủ và robot thông qua mạng hoặc Bluetooth có thể được lập trình mà không cần ROS.

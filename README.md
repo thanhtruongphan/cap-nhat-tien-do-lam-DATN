@@ -77,3 +77,65 @@ Baud rate cao: Thích hợp khi cần truyền dữ liệu nhanh với khối l�
 * Đã điều khiển được trên Raspberry qua giao thức 'serial'
 ![image](https://github.com/user-attachments/assets/cee8b13c-feeb-4c14-9280-4156b09a6531)
 
+
+
+## **'18/09/24  '**
+* Thư viện Gmapping và Catorgrapher
+* Nếu bạn đang làm việc với môi trường đơn giản (phẳng) và sử dụng LIDAR 2D, Gmapping là một lựa chọn dễ dàng và hiệu quả.
+* Nếu bạn cần lập bản đồ trong không gian 3D hoặc cần độ chính xác cao hơn, Cartographer là một lựa chọn tốt hơn nhưng phức tạp hơn để cài đặt và chạy.
+> so sánh phân tích thêm nếu cần
+
+### Sơ lược về SLAM và Gmapping
+* 1. Cơ chế hoạt động của SLAM
+SLAM (Simultaneous Localization and Mapping) là quá trình robot vừa di chuyển trong môi trường, vừa lập bản đồ, đồng thời định vị chính nó trong bản đồ đó.
+Trong Gmapping, thuật toán chủ yếu dựa trên Particle Filter (lọc hạt), nơi mỗi hạt đại diện cho một khả năng vị trí của robot. Dữ liệu từ cảm biến (như LIDAR) sẽ được sử dụng để cập nhật vị trí của các hạt này và tạo ra bản đồ chính xác.
+Nghiên cứu sâu về lý thuyết như Bayesian filtering, Monte Carlo Localization (MCL), và Kalman filtering sẽ giúp bạn hiểu rõ cách robot "đoán" vị trí của nó trong không gian.
+* 2. Cấu trúc dữ liệu và thuật toán trong Gmapping
+Gmapping sử dụng kỹ thuật lọc hạt để duy trì một tập hợp các ước lượng (particles), từ đó dự đoán vị trí của robot. Các Particle Weights được cập nhật liên tục dựa trên sự phù hợp giữa dữ liệu từ cảm biến và bản đồ hiện tại.
+Tìm hiểu sâu về cách Scan Matching (khớp dữ liệu quét từ LIDAR) và Odometry (tính toán khoảng cách di chuyển từ cảm biến bánh xe) kết hợp để tối ưu hóa vị trí và tạo bản đồ.
+* 3. Quản lý dữ liệu cảm biến
+Một phần quan trọng của SLAM là quản lý dữ liệu từ cảm biến như LIDAR, camera, IMU, v.v. Bạn có thể tìm hiểu sâu về cách tích hợp các loại cảm biến này, thu thập và xử lý dữ liệu sao cho phù hợp với thuật toán SLAM.
+Bạn cũng cần nghiên cứu về việc xử lý lỗi của cảm biến, độ trễ và khả năng hợp nhất dữ liệu từ nhiều nguồn cảm biến để có được thông tin chính xác hơn.
+
+>>>>>![image](https://github.com/user-attachments/assets/7d3f0f80-04f8-445f-be75-67add3a70dec)
+>>>![image](https://github.com/user-attachments/assets/29e8d301-534a-4cc8-b76c-f49a229f0e86)
+>>>![image](https://github.com/user-attachments/assets/63738342-bfad-4ad0-b879-6d77060704c2)
+>>>![image](https://github.com/user-attachments/assets/602b6cb4-7ac0-4c55-a283-e6c7b27baa4f)
+>>>![image](https://github.com/user-attachments/assets/53535e55-f378-4fb0-97b2-191337009cd0)
+'''
+def a_star(start, goal, grid_map):
+    open_list = []
+    closed_list = []
+    
+    start_node = Node(start, None)
+    goal_node = Node(goal, None)
+    
+    open_list.append(start_node)
+    
+    while open_list:
+        current_node = min(open_list, key=lambda node: node.f_cost())
+        open_list.remove(current_node)
+        closed_list.append(current_node)
+        
+        if current_node == goal_node:
+            return reconstruct_path(current_node)
+        
+        for neighbor in get_neighbors(current_node, grid_map):
+            if neighbor in closed_list or is_obstacle(neighbor, grid_map):
+                continue
+            
+            if neighbor not in open_list:
+                open_list.append(neighbor)
+            else:
+                new_g_cost = current_node.g_cost + move_cost(current_node, neighbor)
+                if new_g_cost < neighbor.g_cost:
+                    neighbor.g_cost = new_g_cost
+                    neighbor.parent = current_node
+    
+    return None  # Không tìm được đường đi
+
+'''
+
+*Tổng kết:
+Xử lý dữ liệu LIDAR để tạo bản đồ lưới là bước đầu tiên quan trọng.
+Sau đó, bạn có thể triển khai thuật toán A* để tìm đường tối ưu từ vị trí hiện tại của robot tới đích, trong khi tránh các chướng ngại vật từ dữ liệu LIDAR.

@@ -103,10 +103,10 @@ Bạn cũng cần nghiên cứu về việc xử lý lỗi của cảm biến, �
 >>>![image](https://github.com/user-attachments/assets/602b6cb4-7ac0-4c55-a283-e6c7b27baa4f)
 >>>![image](https://github.com/user-attachments/assets/53535e55-f378-4fb0-97b2-191337009cd0)
 '''
+
 def a_star(start, goal, grid_map):
     open_list = []
     closed_list = []
-    
     start_node = Node(start, None)
     goal_node = Node(goal, None)
     
@@ -228,3 +228,9 @@ _For your AMR project:_
   * If you need stability and mature packages for SLAM, path planning, and sensor integration (like LIDAR or IMU), ROS 1 Noetic is a safe choice.
   * If you want to future-proof your project or incorporate more advanced real-time features, ROS 2 Humble (or Foxy) is a good option. Since your project involves complex components like LIDAR, MPU, and camera, ROS 2's better real-time processing and multi-threading could be beneficial.
 
+### CÀI ĐẶT ROS-noetic-Ubuntu20.04 Focal fossa
+* 
+> * Cài đặt môi trường Mô phỏng Linux trên windows (Oracle VM Virtualbox -> Cài Ubuntu 20.04)
+> * Cài Ubuntu 20.04 server trên raspberry pi
+>
+LƯU Ý: 

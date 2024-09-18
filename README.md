@@ -233,4 +233,22 @@ _For your AMR project:_
 > * Cài đặt môi trường Mô phỏng Linux trên windows (Oracle VM Virtualbox -> Cài Ubuntu 20.04)
 > * Cài Ubuntu 20.04 server trên raspberry pi
 >
-LƯU Ý: 
+LƯU Ý:
+> Raspberry Pi4 có vi xử lý dòng ARMv8, tải theo link: https://cdimage.ubuntu.com/releases/20.04.4/release/
+```Khi cài đặt Ubuntu lên thẻ SD```
+> https://www.youtube.com/watch?v=Cw_34fuve6E&t=1s&ab_channel=RoboticsBack-End
+
+```Sau khi cài trên thẻ SD xong, cần cấu hình cài đặt mạng trong file _config_network_```
+> Password bị mã hóa thành chuỗi số, ta cần phải xóa đi, nhập lại mật khẩu.
+
+> Mở raspberry lên, hệ thống sẽ tự cập nhật dưới nền mất khoảng 1h. Lúc này khi ta dùng lệnh 'sudo apt install...' sẽ hiện thông báo bận như sau: ```Waiting for cache lock: Could not get lock /var/lib/dpkg/lock-frontend. It is held by process 3377 (unattended-upgr) ``` ta cần đợi đến khi nó tự hoàn tất.
+
+* Tiếp theo, cài ROS1 theo link: https://roboticsbackend.com/install-ros-on-raspberry-pi-3/#Install_ROS_on_your_Raspberry_Pi
+
+>>>**Lưu ý:** ![image](https://github.com/user-attachments/assets/6b3a854f-ce6d-4682-ace5-636d937a3475)
+
+**_LƯU Ý:_**
+* **Cài Ubuntu 20.04 và ROS noetic trên cả laptop:**
+> **Nếu bạn muốn chạy hệ thống phân tán:**
+> Cài ROS trên cả laptop và Raspberry Pi: ROS hỗ trợ hệ thống phân tán, nghĩa là bạn có thể chạy các node ROS trên nhiều thiết bị và kết nối chúng với nhau. Ví dụ, bạn có thể chạy các node quản lý, hiển thị trên laptop và các node điều khiển, cảm biến trên Raspberry Pi. Điều này giúp giảm tải cho Pi và tăng khả năng điều khiển robot.
+

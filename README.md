@@ -152,15 +152,75 @@ Sau đó, bạn có thể triển khai thuật toán A* để tìm đường t�
 Quản lý các tín hiệu từ encoder để điều chỉnh tốc độ và vị trí động cơ qua PID control là hoàn toàn có thể tự làm.
 **2. Thu thập và xử lý dữ liệu cảm biến:**
 
-    > Nếu chỉ sử dụng các cảm biến cơ bản như LIDAR, camera, hoặc cảm biến siêu âm, bạn có thể lập trình để thu thập dữ liệu từ chúng mà không cần ROS.
+  > Nếu chỉ sử dụng các cảm biến cơ bản như LIDAR, camera, hoặc cảm biến siêu âm, bạn có thể lập trình để thu thập dữ liệu từ chúng mà không cần ROS.
     *Ví dụ: Kết nối và đọc dữ liệu từ RPLIDAR, MPU (Inertial Measurement Unit), hoặc camera qua thư viện giao tiếp tương ứng (như thư viện Python cho LIDAR).*
 
-    > Xử lý dữ liệu cảm biến (ví dụ: xây dựng bản đồ lưới từ LIDAR) có thể được thực hiện thủ công bằng cách viết mã xử lý dữ liệu riêng.
+  > Xử lý dữ liệu cảm biến (ví dụ: xây dựng bản đồ lưới từ LIDAR) có thể được thực hiện thủ công bằng cách viết mã xử lý dữ liệu riêng.
 **3. Thuật toán định vị và tìm đường:**
 
-    > Nếu bạn muốn tự triển khai các thuật toán định vị (localization) và tìm đường (path planning), như A* hoặc Dijkstra, bạn có thể tự viết các thuật toán này từ đầu.
-    > Các hệ thống định vị đơn giản, như sử dụng cảm biến quán tính và encoder, cũng có thể tự làm mà không cần ROS.
+  > Nếu bạn muốn tự triển khai các thuật toán định vị (localization) và tìm đường (path planning), như A* hoặc Dijkstra, bạn có thể tự viết các thuật toán này từ đầu.
+  > Các hệ thống định vị đơn giản, như sử dụng cảm biến quán tính và encoder, cũng có thể tự làm mà không cần ROS.
 **4. Giao tiếp điều khiển từ xa và giao diện người dùng:**
 
-    > Bạn có thể tự thiết kế các giao diện điều khiển (sử dụng Flask cho web interface hoặc giao tiếp qua MQTT) để điều khiển từ xa robot mà không cần ROS.
-    > Những tác vụ giao tiếp cơ bản giữa máy tính chủ và robot thông qua mạng hoặc Bluetooth có thể được lập trình mà không cần ROS.
+  > Bạn có thể tự thiết kế các giao diện điều khiển (sử dụng Flask cho web interface hoặc giao tiếp qua MQTT) để điều khiển từ xa robot mà không cần ROS.
+  > Những tác vụ giao tiếp cơ bản giữa máy tính chủ và robot thông qua mạng hoặc Bluetooth có thể được lập trình mà không cần ROS.
+
+### Những phần cần ROS hoặc dễ dàng hơn khi dùng ROS:
+**1. SLAM (Simultaneous Localization and Mapping):** 
+
+* Việc triển khai SLAM (ví dụ như Gmapping, Cartographer) yêu cầu sự tích hợp của nhiều loại cảm biến và dữ liệu thời gian thực. ROS hỗ trợ tốt việc này với các gói có sẵn cho SLAM.
+* ROS cung cấp các gói như Gmapping, Cartographer, hoặc RTAB-Map để tạo bản đồ và định vị robot trong thời gian thực. Bạn có thể tự triển khai SLAM mà không cần ROS, nhưng việc quản lý dữ liệu cảm biến và hợp nhất chúng sẽ phức tạp hơn nhiều.
+**2. Tích hợp đa cảm biến và đồng bộ hóa:**
+
+* Khi bạn cần tích hợp nhiều loại cảm biến (LIDAR, camera, IMU) và đồng bộ hóa dữ liệu từ các nguồn này, ROS giúp việc này trở nên dễ dàng hơn với các ROS topics và message passing.
+* ROS cung cấp các cơ chế để quản lý và đồng bộ hóa dữ liệu từ nhiều nguồn khác nhau trong hệ thống.
+**3. Hệ thống điều khiển hành vi (Behavior Trees):**
+
+* Nếu bạn muốn lập trình hành vi phức tạp cho robot, như điều hướng tự động, tránh chướng ngại vật, và đưa ra quyết định trong thời gian thực, ROS giúp bạn dễ dàng thiết lập và quản lý các tiến trình này qua các Node và Action Servers.
+* ROS có các gói chuyên dụng để điều khiển hành vi của robot dựa trên các điều kiện môi trường thay đổi.
+**4. Visualization (Rviz, rqt):**
+
+* Khi cần giám sát trực quan dữ liệu từ robot như bản đồ, vị trí hiện tại, hoặc thông tin cảm biến, ROS cung cấp công cụ như Rviz và rqt để hiển thị dữ liệu một cách trực quan.
+* Nếu không có ROS, bạn sẽ phải tự viết các công cụ hiển thị và giao diện giám sát, điều này mất thời gian và phức tạp hơn.
+**6. Tự động điều hướng (Autonomous Navigation):**
+
+* ROS có gói move_base cho điều hướng tự động, giúp bạn xây dựng các lộ trình tránh chướng ngại vật và định vị đích dễ dàng. Nếu không có ROS, bạn sẽ phải tự triển khai thuật toán tránh chướng ngại vật, tính toán lộ trình trong môi trường thay đổi.
+**6. Quản lý hệ thống phân tán:**
+  
+* Nếu bạn muốn triển khai robot AMR với nhiều máy tính, ví dụ Raspberry Pi làm hệ thống nhúng điều khiển và một máy tính khác để xử lý dữ liệu, ROS hỗ trợ tốt việc giao tiếp giữa các máy thông qua ROS Master và ROS Nodes.
+* Việc quản lý hệ thống phân tán và giao tiếp giữa các thành phần sẽ phức tạp nếu bạn không sử dụng ROS.
+**Kết luận:**
+  
+* *Phần không cần ROS:* Bạn có thể tự làm điều khiển cơ bản, thu thập và xử lý dữ liệu cảm biến, triển khai các thuật toán tìm đường và định vị đơn giản, giao tiếp điều khiển từ xa mà không cần ROS.
+* *Phần cần hoặc dễ dàng hơn khi dùng ROS:* Đối với các chức năng phức tạp như SLAM, điều hướng tự động, đồng bộ hóa đa cảm biến, và visualization, ROS sẽ giúp đơn giản hóa quá trình phát triển và tích hợp hệ thống.
+
+* Nếu bạn muốn đi sâu vào tìm hiểu cơ bản, việc không sử dụng ROS có thể giúp bạn nắm rõ cách hoạt động của từng thành phần. Tuy nhiên, khi dự án phức tạp hơn (đặc biệt là với SLAM và điều hướng), ROS sẽ hỗ trợ rất nhiều.
+
+### Tôi nên sử dụng phiên bản ROS nào cho dự án tốt nghiệp làm xe AMR
+
+* For your university graduation project involving an Autonomous Mobile Robot (AMR), the best version of ROS depends on a few factors like hardware compatibility, desired features, and ease of use. However, here are some guidelines to help you choose the right version:
+
+**1. ROS 1 (Noetic):**
+'Pros:'
+  * The Noetic version is the last long-term support (LTS) release of ROS 1, supported until 2025.
+  * It has a large number of packages, including libraries for navigation, SLAM, and sensor integration.
+  * Noetic is designed for Ubuntu 20.04, which might be more stable for your project, especially if you have a Raspberry Pi 4 or similar hardware.
+  * More documentation and community support are available, which can be helpful for troubleshooting.
+'Cons:'
+  * ROS 1 has a single-threaded architecture and is not as scalable or modern as ROS 2.
+**2. ROS 2 (Humble or Foxy):**
+'Pros:'
+  * ROS 2 is the future of the ROS ecosystem, offering better multi-threading, real-time support, and improved communication between nodes.
+  * The Foxy version (LTS) and Humble are stable for long-term projects, with support until 2025 and beyond.
+  * It has better support for advanced networking and safety-critical applications, which might be useful for an AMR project.
+  * If you plan to work on collaborative robots (multi-robot systems) or use DDS (Data Distribution Service) for more robust communication, ROS 2 is highly recommended.
+'Cons:'
+  * The ecosystem is still evolving, and not all ROS 1 packages have been ported to ROS 2.
+  * Learning curve: Since ROS 2 has significant changes, you may need to spend extra time learning its new architecture.
+
+**'Recommendation:'**
+_For your AMR project:_
+
+  * If you need stability and mature packages for SLAM, path planning, and sensor integration (like LIDAR or IMU), ROS 1 Noetic is a safe choice.
+  * If you want to future-proof your project or incorporate more advanced real-time features, ROS 2 Humble (or Foxy) is a good option. Since your project involves complex components like LIDAR, MPU, and camera, ROS 2's better real-time processing and multi-threading could be beneficial.
+

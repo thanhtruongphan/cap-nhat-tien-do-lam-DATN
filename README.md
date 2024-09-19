@@ -270,4 +270,6 @@ LƯU Ý:
         >> rosdep install --from-paths /opt/ros/noetic --ignore-src -r -y
 
 
-
+**_TÓM LẠI: Làm theo thứ tự trong link:_** https://wiki.ros.org/noetic/Installation/Ubuntu
+* _Trường hợp không cài trực tiếp được thì ```install from source```_
+* _rồi quay lại tiếp tục các bước 1.5 và 1.6_

@@ -252,3 +252,9 @@ LƯU Ý:
 > **Nếu bạn muốn chạy hệ thống phân tán:**
 > Cài ROS trên cả laptop và Raspberry Pi: ROS hỗ trợ hệ thống phân tán, nghĩa là bạn có thể chạy các node ROS trên nhiều thiết bị và kết nối chúng với nhau. Ví dụ, bạn có thể chạy các node quản lý, hiển thị trên laptop và các node điều khiển, cảm biến trên Raspberry Pi. Điều này giúp giảm tải cho Pi và tăng khả năng điều khiển robot.
 
+
+## **'19/09/24  '**
+* Cài đặt ROS noetic trên Ubuntu20.04 trên Virtualbox trên laptop theo link: https://www.youtube.com/watch?v=KI6W3iXJLQc&ab_channel=MechDailyLife
+
+
+

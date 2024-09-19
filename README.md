@@ -288,4 +288,38 @@ LƯU Ý:
 -> Kiểm tra quyền truy cập cổng: 
       ```sudo chmod 666 /dev/ttyUSB0```
  
->>>>>>> 
+>>> ![image](https://github.com/user-attachments/assets/66873a1a-55b0-4132-ba69-ad902ab6519e)
+
+>>> ![image](https://github.com/user-attachments/assets/dea2a1d0-6c7b-45e0-9d2d-d72384325cc0)
+
+* **lưu ý:** thay rplidar.launch == rplidar_a1.launch _theo đúng tên file trong reposities github_
+* nhớ ```cd catkin_ws/src -> git clone https://github.com/Slamtec/rplidar_ros.git``` trên cả Raspberry và Ubuntu trên laptop
+* --> cd về ```catkin_ws --> catkin_make --> source ~/.bashrc```
+
+>>> ![image](https://github.com/user-attachments/assets/206e8c13-158e-43d7-920e-bbf4d992cd5c)
+
+>>> ![image](https://github.com/user-attachments/assets/a289fd7a-1536-435f-a02e-c30ee60845da)
+
+>>> ![image](https://github.com/user-attachments/assets/125d1236-af30-487d-a00a-50f195a09f14)
+
+**_Tuy nhiên, cần tạo URDF cho Robot trước, mới đúng quy trình_**
+
+**_Nhận xét thêm: ```hector SLAM``` mình mới phát hiện, thấy ưu việt vãi so với ```Gmapping```, vậy có còn nên sử dụng gmapping không?_**
+
+#### Một vài lỗi khi thực hiện mapping trên Rviz, (hệ thống có Lidar cắm vào Rasp, rasp kết nối Multi-tasking với Laptop qua URI)
+
+![image](https://github.com/user-attachments/assets/f39d4c5e-8c56-432c-9532-108bd3686227)
+
+* sử dụng lệnh ```ping <IP ADDRESS>``` qua lại để kiểm tra kết nối được chưa
+* hoặc sử dụng ```rostopic list```
+
+> Trường hợp mà bị lỗi không xem được [laser] trong Rviz, thì mở thêm **Terminal** chạy lệnh sau:
+  ![image](https://github.com/user-attachments/assets/14959ba5-9542-4fb6-b21c-01cbbff6ef5f)
+>
+>>>>>>>>>>>>>>>>>>>>> ![image](https://github.com/user-attachments/assets/46e96232-47df-4860-bff0-9674b36f3f65)
+
+> Kết quả thực hiện được đến đây như sau:
+>>> ![image](https://github.com/user-attachments/assets/2a918589-75dc-4a09-9d45-4be02d054c83)
+
+
+

@@ -256,5 +256,12 @@ LƯU Ý:
 ## **'19/09/24  '**
 * Cài đặt ROS noetic trên Ubuntu20.04 trên Virtualbox trên laptop theo link: https://www.youtube.com/watch?v=KI6W3iXJLQc&ab_channel=MechDailyLife
 
+```**Lưu ý: **```
+> Trường hợp cài trực tiếp theo link hướng dẫn không được thì ```install from source```
+> Tuy nhiên sẽ có nhược điểm là mình phải cài mọi thứ thủ công, (tham khảo trên ChatGPT trước tiên)
+> Sau này các gói nào thiếu thì cài gói đó, và lưu ý cú pháp cài đặt ```**sudo apt-get install ros-noetic-$<packinstall>**```
+> Ex: ```sudo apt-get install ros-noetic-rosbash``` or ```sudo apt-get install ros-noetic-turtlesim```
+>
+> * Luôn phải source theo mẫu ```echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc``` -> ```source ~/.bashrc```
 
 

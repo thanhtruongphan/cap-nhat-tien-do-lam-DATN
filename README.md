@@ -308,6 +308,10 @@ LƯU Ý:
 
 #### Một vài lỗi khi thực hiện mapping trên Rviz, (hệ thống có Lidar cắm vào Rasp, rasp kết nối Multi-tasking với Laptop qua URI)
 
+> Lệnh xem mô tả cây TF ![image](https://github.com/user-attachments/assets/0f90b1cc-bef4-42a2-9ee3-a58d4c32ad50)
+
+--> Cây có dạng: ![image](https://github.com/user-attachments/assets/af2d3ae9-ae19-4d9a-8471-5c5f7f27163f)
+
 ![image](https://github.com/user-attachments/assets/f39d4c5e-8c56-432c-9532-108bd3686227)
 
 * sử dụng lệnh ```ping <IP ADDRESS>``` qua lại để kiểm tra kết nối được chưa

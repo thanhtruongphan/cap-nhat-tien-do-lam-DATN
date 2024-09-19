@@ -263,5 +263,11 @@ LƯU Ý:
 > Ex: ```sudo apt-get install ros-noetic-rosbash``` or ```sudo apt-get install ros-noetic-turtlesim```
 >
 > * Luôn phải source theo mẫu ```echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc``` -> ```source ~/.bashrc```
+>
+> Lệnh sau có vẻ hữu ích, dù quên mất lỗi gì mà dung:
+        >> sudo rosdep init
+        >> rosdep update
+        >> rosdep install --from-paths /opt/ros/noetic --ignore-src -r -y
+
 
 

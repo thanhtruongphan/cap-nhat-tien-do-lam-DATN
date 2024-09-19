@@ -273,3 +273,19 @@ LƯU Ý:
 **_TÓM LẠI: Làm theo thứ tự trong link:_** https://wiki.ros.org/noetic/Installation/Ubuntu
 * _Trường hợp không cài trực tiếp được thì ```install from source```_
 * _rồi quay lại tiếp tục các bước 1.5 và 1.6_
+
+
+### LÀM VIỆC VỚI RPLIDAR
+* lỗi
+>>>>>>> ![image](https://github.com/user-attachments/assets/12a311e6-016b-42cc-8985-19deada32756)
+
+-> Kiểm tra cổng USB
+      ```ls /dev/ttyUSB*```
+-> Chỉnh sửa file Launch đúng cổng: 
+      ```roscd rplidar_ros/launch```
+      ```nano rplidar.launch``` kiểm tra:
+      ```<param name="serial_port" value="/dev/ttyUSB0"/>```
+-> Kiểm tra quyền truy cập cổng: 
+      ```sudo chmod 666 /dev/ttyUSB0```
+ 
+>>>>>>> 

@@ -326,4 +326,12 @@ LƯU Ý:
 >>> ![image](https://github.com/user-attachments/assets/2a918589-75dc-4a09-9d45-4be02d054c83)
 
 
+## **'23/09/24  '**
+![image](https://github.com/user-attachments/assets/e2f31a17-98d8-48e7-8044-03b12d5d3ee3)
+
+![image](https://github.com/user-attachments/assets/d4f59be8-33a4-4dcc-a776-921587e80db8)
+
+![image](https://github.com/user-attachments/assets/47575790-aa13-4c8d-9287-c76f4cfc4442)
+
+![image](https://github.com/user-attachments/assets/eb6c1a3d-4ea9-496a-a5a1-955de1ee021d)
 

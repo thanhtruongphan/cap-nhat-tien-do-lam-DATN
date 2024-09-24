@@ -335,3 +335,11 @@ LƯU Ý:
 
 ![image](https://github.com/user-attachments/assets/eb6c1a3d-4ea9-496a-a5a1-955de1ee021d)
 
+## **'24/09/24  '**
+![image](https://github.com/user-attachments/assets/e5e6be2b-0ce6-421c-a13b-54aa82da653b)
+
+![image](https://github.com/user-attachments/assets/ed59d235-6146-49df-bc0a-d79fc63e2289)
+
+![image](https://github.com/user-attachments/assets/d7732f80-31f7-40e7-81a2-569dca30dbdf)
+
+--> cd catkin_ws/ --> catkin_make lại sẽ oke.

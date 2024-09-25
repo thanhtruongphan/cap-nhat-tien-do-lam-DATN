@@ -343,3 +343,10 @@ LƯU Ý:
 ![image](https://github.com/user-attachments/assets/d7732f80-31f7-40e7-81a2-569dca30dbdf)
 
 --> cd catkin_ws/ --> catkin_make lại sẽ oke.
+
+
+## **'25/09/24  '**
+![image](https://github.com/user-attachments/assets/2057ae82-9cfb-4597-9c58-417d437b138a)
+
+![image](https://github.com/user-attachments/assets/9242458f-4a69-4bfe-8a60-ab946611cf01)
+

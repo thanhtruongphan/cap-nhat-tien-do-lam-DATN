@@ -1,7 +1,7 @@
 #include <ros.h>
 #include "diffbot_base_config.h"
 #include "base_controller.h"
-#include "control_motors.h"  // Sử dụng file control_motors.h
+#include "controller_motors.h"  // Sử dụng file control_motors.h
 
 ros::NodeHandle nh;
 

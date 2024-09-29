@@ -1,4 +1,4 @@
-#include "control_motors.h"
+#include "controller_motors.h"
 
 diffbot::MotorController::MotorController(uint8_t dir_pin1, uint8_t dir_pin2, uint8_t pwm_pin)
     : dir_pin1_(dir_pin1), dir_pin2_(dir_pin2), pwm_pin_(pwm_pin) {}
